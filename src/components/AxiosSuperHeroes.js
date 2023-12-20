@@ -19,7 +19,7 @@ const AxiosSuperHeroes = () => {
 
   return (
     <div>
-      <p>Axios SuperHeroes Test</p>
+      <p>Axios SuperHeroes</p>
     </div>
   );
 };
