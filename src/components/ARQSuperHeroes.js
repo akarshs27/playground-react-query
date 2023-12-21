@@ -1,13 +1,13 @@
+import axios from "axios";
 import { useQuery } from "react-query";
 
-const RQSuperHeroes = () => {
-  async function fetchSuperHeroes() {
-    const res = await fetch("http://localhost:4000/superheroes");
-    return res.json();
+const ARQSuperHeroes = () => {
+  function fetchSuperHeroes() {
+    return axios.get("http://localhost:4000/superheroes1");
   }
 
   const { isLoading, data, isError, error } = useQuery(
-    "rq-super-heroes",
+    "arq-super-heroes",
     fetchSuperHeroes
   );
 
@@ -21,12 +21,12 @@ const RQSuperHeroes = () => {
 
   return (
     <div>
-      <p>RQSuperHeroes</p>
-      {data?.map((each) => (
+      <p>ARQSuperHeroes</p>
+      {data?.data.map((each) => (
         <p key={each.id}>{each.name}</p>
       ))}
     </div>
   );
 };
 
-export default RQSuperHeroes;
+export default ARQSuperHeroes;

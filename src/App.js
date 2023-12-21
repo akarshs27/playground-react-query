@@ -4,6 +4,7 @@ import Homepage from "./components/Homepage";
 import SuperHeroes from "./components/SuperHeroes";
 import RQSuperHeroes from "./components/RQSuperHeroes";
 import AxiosSuperHeroes from "./components/AxiosSuperHeroes";
+import ARQSuperHeroes from "./components/ARQSuperHeroes";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
               <li>
                 <Link to="/rq-super-heroes">RQ SuperHeroes</Link>
               </li>
+              <li>
+                <Link to="/arq-super-heroes">ARQ SuperHeroes</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -34,6 +38,7 @@ function App() {
           <Route path="/axios-super-heroes" element={<AxiosSuperHeroes />} />
           <Route path="/super-heroes" element={<SuperHeroes />} />
           <Route path="/rq-super-heroes" element={<RQSuperHeroes />} />
+          <Route path="/arq-super-heroes" element={<ARQSuperHeroes />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
