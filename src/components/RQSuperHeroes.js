@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import { useSuperHeroesData } from "../hooks/useSuperHeroesData";
 
 const RQSuperHeroes = () => {
   async function fetchSuperHeroes() {
@@ -6,9 +7,29 @@ const RQSuperHeroes = () => {
     return res.json();
   }
 
-  const { isLoading, data, isError, error } = useQuery(
+  function onSuccessCallback(data) {
+    console.log("Perform side effect on success", data);
+  }
+
+  function onErrorCallback(error) {
+    console.log("Perform side effect on error", error);
+  }
+
+  //   const { isLoading, data, isError, error, refetch } = useSuperHeroesData(onSuccessCallback, onErrorCallback);
+
+  const { isLoading, data, isError, error, refetch } = useQuery(
     "rq-super-heroes",
-    fetchSuperHeroes
+    fetchSuperHeroes,
+    {
+      //   enabled: false,
+      onSuccess: onSuccessCallback,
+      onError: onErrorCallback,
+      //   select: (data) => {
+      //      data transformation / filtering
+      //     const superHeroesNames = data.map((hero) => hero.name);
+      //     return superHeroesNames;
+      //   },
+    }
   );
 
   if (isLoading) {
@@ -22,6 +43,7 @@ const RQSuperHeroes = () => {
   return (
     <div>
       <p>RQSuperHeroes</p>
+      <button onClick={refetch}>Fetch SuperHeroes</button>
       {data?.map((each) => (
         <p key={each.id}>{each.name}</p>
       ))}
