@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 const AxiosSuperHeroes = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     axios
@@ -12,14 +13,26 @@ const AxiosSuperHeroes = () => {
         setData(res.data);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error(err);
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
       });
-  });
+  }, []);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <div>
       <p>Axios SuperHeroes</p>
+      {data.map((each) => (
+        <p key={each.id}>{each.name}</p>
+      ))}
     </div>
   );
 };
