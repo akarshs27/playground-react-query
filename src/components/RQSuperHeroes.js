@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import { useSuperHeroesData } from "../hooks/useSuperHeroesData";
+import { Link } from "react-router-dom";
 
 const RQSuperHeroes = () => {
   async function fetchSuperHeroes() {
@@ -21,7 +22,7 @@ const RQSuperHeroes = () => {
     "rq-super-heroes",
     fetchSuperHeroes,
     {
-      //   enabled: false,
+      //   enabled: false, // use with refetch
       onSuccess: onSuccessCallback,
       onError: onErrorCallback,
       //   select: (data) => {
@@ -45,7 +46,9 @@ const RQSuperHeroes = () => {
       <p>RQSuperHeroes</p>
       <button onClick={refetch}>Fetch SuperHeroes</button>
       {data?.map((each) => (
-        <p key={each.id}>{each.name}</p>
+        <Link to={`/rq-super-heroes/${each.id}`} key={each.id}>
+          {each.name}
+        </Link>
       ))}
     </div>
   );

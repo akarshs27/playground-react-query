@@ -6,7 +6,10 @@ import SuperHeroes from "./components/SuperHeroes";
 import RQSuperHeroes from "./components/RQSuperHeroes";
 import AxiosSuperHeroes from "./components/AxiosSuperHeroes";
 import ARQSuperHeroes from "./components/ARQSuperHeroes";
+import RQHero from "./components/RQHero";
+import ParallelQueries from "./components/ParallelQueries";
 import "./App.css";
+import RQDynamicQueries from "./components/RQDynamicQueries";
 
 function App() {
   const queryClient = new QueryClient();
@@ -31,6 +34,12 @@ function App() {
               <li>
                 <Link to="/arq-super-heroes">ARQ SuperHeroes</Link>
               </li>
+              <li>
+                <Link to="/p-queries">Parallel Queries</Link>
+              </li>
+              <li>
+                <Link to="/dynamic-p-queries">Dynamic Parallel Queries</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -39,7 +48,13 @@ function App() {
           <Route path="/axios-super-heroes" element={<AxiosSuperHeroes />} />
           <Route path="/super-heroes" element={<SuperHeroes />} />
           <Route path="/rq-super-heroes" element={<RQSuperHeroes />} />
+          <Route path="/rq-super-heroes/:heroId" element={<RQHero />} />
           <Route path="/arq-super-heroes" element={<ARQSuperHeroes />} />
+          <Route path="/p-queries" element={<ParallelQueries />} />
+          <Route
+            path="/dynamic-p-queries"
+            element={<RQDynamicQueries heroIds={[1, 3]} />}
+          />
         </Routes>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

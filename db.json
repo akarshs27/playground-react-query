@@ -15,5 +15,22 @@
       "name": "Captain America",
       "alterEgo": "Steve Rogers"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Joey",
+      "alterEgo": "Tony"
+    },
+    {
+      "id": 2,
+      "name": "Rachel",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "id": 3,
+      "name": "Chandler",
+      "alterEgo": "Steve Rogers"
+    }
   ]
 }
