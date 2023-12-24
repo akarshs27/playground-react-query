@@ -8,8 +8,9 @@ import AxiosSuperHeroes from "./components/AxiosSuperHeroes";
 import ARQSuperHeroes from "./components/ARQSuperHeroes";
 import RQHero from "./components/RQHero";
 import ParallelQueries from "./components/ParallelQueries";
-import "./App.css";
 import RQDynamicQueries from "./components/RQDynamicQueries";
+import DependentQueries from "./components/DependentQueries";
+import "./App.css";
 
 function App() {
   const queryClient = new QueryClient();
@@ -35,10 +36,13 @@ function App() {
                 <Link to="/arq-super-heroes">ARQ SuperHeroes</Link>
               </li>
               <li>
-                <Link to="/p-queries">Parallel Queries</Link>
+                <Link to="/rp-queries">Parallel Queries</Link>
               </li>
               <li>
                 <Link to="/dynamic-p-queries">Dynamic Parallel Queries</Link>
+              </li>
+              <li>
+                <Link to="/dependent-queries">Dependent Queries</Link>
               </li>
             </ul>
           </nav>
@@ -50,10 +54,14 @@ function App() {
           <Route path="/rq-super-heroes" element={<RQSuperHeroes />} />
           <Route path="/rq-super-heroes/:heroId" element={<RQHero />} />
           <Route path="/arq-super-heroes" element={<ARQSuperHeroes />} />
-          <Route path="/p-queries" element={<ParallelQueries />} />
+          <Route path="/rp-queries" element={<ParallelQueries />} />
           <Route
             path="/dynamic-p-queries"
             element={<RQDynamicQueries heroIds={[1, 3]} />}
+          />
+          <Route
+            path="/dependent-queries"
+            element={<DependentQueries email="akarshs27@gmail.com" />}
           />
         </Routes>
       </BrowserRouter>

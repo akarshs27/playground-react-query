@@ -32,5 +32,17 @@
       "name": "Chandler",
       "alterEgo": "Steve Rogers"
     }
+  ],
+  "users": [
+    {
+      "id": "akarshs27@gmail.com",
+      "channelId": "akarsh"
+    }
+  ],
+  "channels": [
+    {
+      "id": "akarsh",
+      "content": ["music", "sports", "games"]
+    }
   ]
 }
