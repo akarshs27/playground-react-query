@@ -14,6 +14,21 @@
       "id": 3,
       "name": "Captain America",
       "alterEgo": "Steve Rogers"
+    },
+    {
+      "name": "gh",
+      "alterEgo": "hbjb",
+      "id": 4
+    },
+    {
+      "name": " mm ,",
+      "alterEgo": "km",
+      "id": 5
+    },
+    {
+      "name": "da",
+      "alterEgo": "fw",
+      "id": 6
     }
   ],
   "friends": [
@@ -42,7 +57,41 @@
   "channels": [
     {
       "id": "akarsh",
-      "content": ["music", "sports", "games"]
+      "content": [
+        "music",
+        "sports",
+        "games"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "color": "red"
+    },
+    {
+      "id": 3,
+      "color": "green"
+    },
+    {
+      "id": 4,
+      "color": "yellow"
+    },
+    {
+      "id": 5,
+      "color": "pink"
+    },
+    {
+      "id": 6,
+      "color": "black"
+    },
+    {
+      "id": 7,
+      "color": "white"
     }
   ]
 }

@@ -2,12 +2,11 @@ import { useQuery } from "react-query";
 import { useSuperHeroesData } from "../hooks/useSuperHeroesData";
 import { Link } from "react-router-dom";
 
+async function fetchSuperHeroes() {
+  const res = await fetch("http://localhost:4000/superheroes");
+  return res.json();
+}
 const RQSuperHeroes = () => {
-  async function fetchSuperHeroes() {
-    const res = await fetch("http://localhost:4000/superheroes");
-    return res.json();
-  }
-
   function onSuccessCallback(data) {
     console.log("Perform side effect on success", data);
   }

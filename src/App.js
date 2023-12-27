@@ -10,6 +10,9 @@ import RQHero from "./components/RQHero";
 import ParallelQueries from "./components/ParallelQueries";
 import RQDynamicQueries from "./components/RQDynamicQueries";
 import DependentQueries from "./components/DependentQueries";
+import PaginatedQueries from "./components/PaginatedQueries";
+import InfiniteQueries from "./components/InfiniteQueries";
+import MutationQueries from "./components/MutationQueries";
 import "./App.css";
 
 function App() {
@@ -44,11 +47,23 @@ function App() {
               <li>
                 <Link to="/dependent-queries">Dependent Queries</Link>
               </li>
+              <li>
+                <Link to="/paginated-queries">Paginated Queries</Link>
+              </li>
+              <li>
+                <Link to="/infinite-queries">Infinite Queries</Link>
+              </li>
+              <li>
+                <Link to="/mutation-queries">Mutation Queries</Link>
+              </li>
             </ul>
           </nav>
         </div>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/paginated-queries" element={<PaginatedQueries />} />
+          <Route path="/infinite-queries" element={<InfiniteQueries />} />
+          <Route path="/mutation-queries" element={<MutationQueries />} />
           <Route path="/axios-super-heroes" element={<AxiosSuperHeroes />} />
           <Route path="/super-heroes" element={<SuperHeroes />} />
           <Route path="/rq-super-heroes" element={<RQSuperHeroes />} />
